@@ -37,6 +37,10 @@ app.get("/sudoku",async (req, res) =>{
     }    
 })
 
+app.use((req, res) =>{
+    return res.status(404).json({error : "Not found"}) // "<html> <h1><b>Not Found</b></h1> </html>"
+})
+
 // ## RUNNER ##
 app.listen(PORT, (error) =>{
     if (error) {
